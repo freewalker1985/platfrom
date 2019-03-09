@@ -3,12 +3,18 @@ from django import forms
 
 
 class ServerDetailForm(forms.ModelForm):
-    model = ServerDetail
+    class Meta:
+        model = ServerDetail
+        fields = '__all__'
 
 
 class ProjectForm(forms.ModelForm):
-    model = Project
+    class Meta:
+        model = Project
+        fields = '__all_'
 
 
 class CategoryForm(forms.ModelForm):
-    model = Category
+    class Meta:
+        model = Category
+        fields = '__all__'

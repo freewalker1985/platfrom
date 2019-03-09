@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form action="" method="post">
+    <form action="{% url 'detail' obj.pk %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
     </form>
