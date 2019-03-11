@@ -11,7 +11,7 @@ class ServerDetailForm(forms.ModelForm):
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        fields = '__all_'
+        fields = '__all__'
 
 
 class CategoryForm(forms.ModelForm):

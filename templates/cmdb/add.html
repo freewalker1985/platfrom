@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <form action="{% url 'list_add' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="'modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

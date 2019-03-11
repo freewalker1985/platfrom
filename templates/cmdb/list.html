@@ -2,7 +2,7 @@
 
 {% block content %}
 <div>
-<button class="btn-sm btn-dark">新增</button>
+<button class="btn-sm btn-dark"><a href="{% url 'list_add' %}">新增</a></button>
 <button class="btn-sm btn-dark">批量删除</button>
 <table class="table table-bordered">
     <thead class="thead-dark">
@@ -28,18 +28,12 @@
                 <td >#</td>
                 <td >#</td>
                 <td>
-                    <a class="btn-sm btn-dark" href="#">编辑</a>
+                    <a href="{% url 'list_edit' obj.pk %}" data-toggle="modal" data-target="#myModal" class="btn-sm btn-dark">编辑</a>
                     <a class="btn-sm btn-dark" href="#">删除</a>
                 </td>
             </tr>
         {% endfor %}
-        <div>
-
-        </div>
     </tbody>
 </table>
-
 </div>
-
-
 {% endblock %}
