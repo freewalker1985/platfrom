@@ -1,39 +1,47 @@
 {% extends 'base.html' %}
+{% block sidebar %}
+    {% include 'sidebar.html' %}
+{% endblock %}
 
 {% block content %}
-<div>
-<button class="btn-sm btn-dark"><a href="{% url 'list_add' %}">新增</a></button>
-<button class="btn-sm btn-dark">批量删除</button>
-<table class="table table-bordered">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">序号</th>
-            <th scope="col">IP地址</th>
-            <th scope="col">项目名称</th>
-            <th scope="col">状态</th>
-            <th scope="col">分类</th>
-            <th scope="col">ssh</th>
-            <th scope="col">FTP</th>
-            <th scope="col">操作</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for obj in objs %}
-            <tr >
-                <td >{{ obj.pk }}</td>
-                <td >{{ obj.ip }}</td>
-                <td >{{ obj.project.name }}</td>
-                <td >{{ obj.get_status_display }}</td>
-                <td >{{ obj.category.name }}</td>
-                <td >#</td>
-                <td >#</td>
-                <td>
-                    <a href="{% url 'list_edit' obj.pk %}" data-toggle="modal" data-target="#myModal" class="btn-sm btn-dark">编辑</a>
-                    <a class="btn-sm btn-dark" href="#">删除</a>
-                </td>
+    <div>
+        <button class="btn-sm btn-light"><a href="{% url 'list_add' %}">新增</a></button>
+        <button class="btn-sm btn-light">批量删除</button>
+        <table class="table table-bordered">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">序号</th>
+                <th scope="col">IP地址</th>
+                <th scope="col">项目名称</th>
+                <th scope="col">状态</th>
+                <th scope="col">分类</th>
+                <th scope="col">ssh</th>
+                <th scope="col">FTP</th>
+                <th scope="col">操作</th>
             </tr>
-        {% endfor %}
-    </tbody>
-</table>
-</div>
+            </thead>
+            <tbody>
+            {% for obj in objs %}
+                <tr>
+                    <td>{{ obj.pk }}</td>
+                    <td>{{ obj.ip }}</td>
+                    <td>{{ obj.project.name }}</td>
+                    <td>{{ obj.get_status_display }}</td>
+                    <td>{{ obj.category.name }}</td>
+                    <td>#</td>
+                    <td>#</td>
+                    <td>
+                        <a href="{% url 'list_edit' obj.pk %}" data-toggle="modal" data-target="#myModal"
+                           class="btn-sm btn-dark">编辑</a>
+                        {#                    <a href="{% url 'list_edit' obj.pk %}" class="btn-sm btn-dark">编辑</a>#}
+                        <a class="btn-sm btn-dark" href="#">删除</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% include 'modal.html' %}
+
+    </div>
 {% endblock %}
+

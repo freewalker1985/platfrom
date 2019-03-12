@@ -1,35 +1,21 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
+<head>
     <meta charset="utf-8">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-
-  </head>
-  <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">{% include 'sidebar.html' %}</div>
-            <div class="col-md-10">
-                    {% block content %}{% endblock %}
-            </div>
-        </div>
-    </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="{% static 'js/jquery.slim.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-
-    {% include 'modal.html' %}
-
-    <script>
-        $('#myModal').on('show.bs.modal', function (e) {
-            let link = $(e.relatedTarget);
-            $(this).find(".modal-body").load(link.attr("href"));
-        });
-    </script>
-  </body>
+    <script src="{% static 'js/modal.js' %}"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">{% block sidebar %}{% endblock %}</div>
+        <div class="col-md-10">{% block content %}{% endblock %}</div>
+    </div>
+</div>
+</body>
+{% include 'modal.html' %}
 </html>

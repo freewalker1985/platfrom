@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div>
-        <form action="{% url 'list_edit' obj.pk %}" method="post">
-            {% csrf_token %}
-            {% for field in form %}
-                <div class="form-group">
-                    {{ field.label_tag }}
-                    <div class="form-control">
-                        {{ field }}
-                    </div>
+<div>
+    <form action="{% url 'list_edit' obj.pk %}" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                <div class="form-control">
+                    {{ field }}
                 </div>
-            {% endfor %}
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="'modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save</button>
             </div>
-        </form>
+        {% endfor %}
+    </form>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="'modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save</button>
     </div>
+</div>
 {% endblock %}
