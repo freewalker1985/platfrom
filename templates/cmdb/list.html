@@ -34,7 +34,7 @@
                         <a href="{% url 'list_edit' obj.pk %}" data-toggle="modal" data-target="#myModal"
                            class="btn-sm btn-dark">编辑</a>
                         {#                    <a href="{% url 'list_edit' obj.pk %}" class="btn-sm btn-dark">编辑</a>#}
-                        <a class="btn-sm btn-dark" href="#">删除</a>
+                        <a class="btn-sm btn-dark" href="{% url 'list_del' obj.pk %}">删除</a>
                     </td>
                 </tr>
             {% endfor %}

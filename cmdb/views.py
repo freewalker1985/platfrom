@@ -30,3 +30,10 @@ def serveredit(request, pk):
     else:
         form = ServerDetailForm(instance=obj)
     return render(request, 'cmdb/edit.html', {'form': form, 'obj': obj})
+
+
+def serverdel(request, pk):
+    obj = get_object_or_404(ServerDetail, pk=pk)
+    obj.delete()
+    return redirect('list')
+
