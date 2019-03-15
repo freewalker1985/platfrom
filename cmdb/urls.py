@@ -6,4 +6,6 @@ urlpatterns = [
     path('list/add/', views.serveradd, name='list_add'),
     path('list/del/<int:pk>', views.serverdel, name='list_del'),
     path('list/edit/<int:pk>/', views.serveredit, name='list_edit'),
+    path('handler/ssh/<ip>', views.invokessh, name='ssh'),
+    path('handler/scp/', views.invokescp, name='scp'),
 ]

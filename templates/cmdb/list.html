@@ -28,8 +28,8 @@
                     <td>{{ obj.project.name }}</td>
                     <td>{{ obj.get_status_display }}</td>
                     <td>{{ obj.category.name }}</td>
-                    <td>#</td>
-                    <td>#</td>
+                    <td><a href="{% url 'ssh' obj.ip %}" class="btn-sm btn-dark">连接</a></td>
+                    <td><a href="{% url 'scp' %}" class="btn-sm btn-dark">上传</a></td>
                     <td>
                         <a href="{% url 'list_edit' obj.pk %}" data-toggle="modal" data-target="#myModal"
                            class="btn-sm btn-dark">编辑</a>

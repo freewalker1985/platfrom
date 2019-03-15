@@ -3,6 +3,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import ServerDetail
 from .froms import ServerDetailForm
 
+import win32api
+
+
 
 def serverlist(request):
     objs = ServerDetail.objects.all()
@@ -37,3 +40,13 @@ def serverdel(request, pk):
     obj.delete()
     return redirect('list')
 
+
+def invokessh(request, ip):
+    agr = '-ssh root@' + ip
+    win32api.ShellExecute(0, 'open', 'putty.exe ', agr, '', 1)
+    return redirect('list')
+
+
+def invokescp(request):
+    win32api.ShellExecute(0, 'open', 'C:\Program Files (x86)\WinSCP\WinSCP.exe', '', '', 1)
+    return redirect('list')
