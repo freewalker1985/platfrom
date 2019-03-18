@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+app_name = 'cmdb'
 urlpatterns = [
     path('list/', views.serverlist, name='list'),
     path('list/add/', views.serveradd, name='list_add'),

@@ -29,7 +29,7 @@ def serveredit(request, pk):
         form = ServerDetailForm(request.POST, instance=obj)
         if form.is_valid():
             form.save()
-            return redirect('list')
+            return redirect('cmdb:list')
     else:
         form = ServerDetailForm(instance=obj)
     return render(request, 'cmdb/edit.html', {'form': form, 'obj': obj})
@@ -38,15 +38,15 @@ def serveredit(request, pk):
 def serverdel(request, pk):
     obj = get_object_or_404(ServerDetail, pk=pk)
     obj.delete()
-    return redirect('list')
+    return redirect('cmdb:list')
 
 
 def invokessh(request, ip):
     agr = '-ssh root@' + ip
     win32api.ShellExecute(0, 'open', 'putty.exe ', agr, '', 1)
-    return redirect('list')
+    return redirect('cmdb:list')
 
 
 def invokescp(request):
     win32api.ShellExecute(0, 'open', 'C:\Program Files (x86)\WinSCP\WinSCP.exe', '', '', 1)
-    return redirect('list')
+    return redirect('cmdb:list')

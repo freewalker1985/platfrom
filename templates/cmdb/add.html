@@ -2,7 +2,7 @@
 
 {% block content %}
 <div>
-    <form action="{% url 'list_add' %}" method="post">
+    <form action="{% url 'cmdb:list_add' %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
 

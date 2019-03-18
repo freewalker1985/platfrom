@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cmdb/', include('cmdb.urls')),
+    path('cmdb/', include('cmdb.urls', namespace='cmdb')),
+    path('deploy/', include('deploy.urls', namespace='deploy')),
 ]

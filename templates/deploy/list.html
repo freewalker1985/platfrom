@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+    {% include 'sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <label for="server_list">
+                    <span>服务器列表：</span>
+                </label>
+
+            </div>
+            <div class="col-md-4">
+                <select name="#" id="server_list" multiple="multiple">
+                    {% for obj in objs %}
+                        <option value="{{ obj.ip }}">{{ obj.ip }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-4">
+                <select name="#" id="#" multiple="multiple">
+
+                </select>
+            </div>
+        </div>
+    </div>
+    <form action="#" method="post">
+
+
+    </form>
+
+{% endblock %}
+
