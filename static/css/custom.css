@@ -1,0 +1,15 @@
+#server_list {
+    width: 350px;
+    height: 250px;
+}
+
+#server_list_execute {
+    width: 350px;
+    height: 250px;
+}
+
+#server_move {
+    top: 80px;
+    left: 55px;
+}
+

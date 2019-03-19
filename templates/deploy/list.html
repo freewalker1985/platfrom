@@ -16,24 +16,24 @@
             <div class="col-md-4">
                 <select name="#" id="server_list" multiple="multiple">
                     {% for obj in objs %}
-                        <option value="{{ obj.ip }}">{{ obj.ip }}</option>
+                        <option value="#">{{ obj.ip }}</option>
                     {% endfor %}
                 </select>
             </div>
-            <div class="col-md-2">
-
+            <div class="col-md-2" id="server_move" >
+                <div>
+                    <input type="button" id="right_move" onclick="rightmove();" value="右移">
+                </div>
+                <div>
+                    <input type="button" id="left_move" value="左移">
+                </div>
             </div>
             <div class="col-md-4">
-                <select name="#" id="#" multiple="multiple">
-
+                <select name="#" id="server_list_execute" multiple="multiple">
                 </select>
             </div>
         </div>
     </div>
-    <form action="#" method="post">
-
-
-    </form>
 
 {% endblock %}
 
