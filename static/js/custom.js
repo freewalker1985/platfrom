@@ -4,8 +4,8 @@ $('#myModal').on('show.bs.modal', function (e) {
 });
 
 
-function rightmove() {
-    let data = $('#server_list').find("option:selected").text();
-    // $('#server_list_execute').find("option").append(data);
-    $('#server_list_execute').add("option")
-}
+$("#right_move").click(function () {
+    console.log($("#server_list option:selected"));
+    $("#server_list_execute").append($("#server_list option:selected"));
+});
+
