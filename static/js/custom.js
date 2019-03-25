@@ -9,6 +9,10 @@ $().ready(function() {
     $("#right_move").click(function () {
         $("#server_list_execute").append($("#server_list option:selected"));
     });
+
+    $("#left_move").click(function () {
+        $("#server_list").append($("#server_list_execute option:selected"));
+    })
 });
 
 
