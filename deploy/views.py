@@ -18,27 +18,7 @@ def serverlist(request):
     return render(request, 'deploy/list.html', {'objs': objs})
 
 
-# class ResultCallback(CallbackBase):
-#     """重构执行结果"""
 #
-#     def __init__(self, *args, **kwargs):
-#         super(ResultCallback, self).__init__(*args, **kwargs)
-#         self.host_ok = {}
-#         self.host_unreachable = {}
-#         self.host_failed = {}
-#
-#     def v2_runner_on_unreachable(self, result, *args, **kwargs):
-#         """不可达"""
-#         self.host_unreachable[result._host.get_name()] = result
-#
-#     def v2_runner_on_ok(self, result, *args, **kwargs):
-#         """执行成功"""
-#         self.host_ok[result._host.get_name()] = result
-#
-#     def v2_runner_on_failed(self, result, *args, **kwargs):
-#         """执行失败"""
-#         self.host_failed[result._host.get_name()] = result
-
 
 # def exec_task(module_name, module_args, host_list, option_dict):
 #     # namedtuple命名元组，使用属性名访问
